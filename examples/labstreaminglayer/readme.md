@@ -41,5 +41,70 @@ For running just the node, for example if you were running the python in a separ
 npm run start-node
 ```
 
+## Writing Lab Streaming Layer Code
+If you would like to use lab streaming layer in a custom OpenBCI NodeJS application, you must include an instance of the OpenBCI NodeJS library and an instance of a Python interface. A basic example is shown below:
+
+`index.js`
+```js
+// Construct LSL Handoff Python Shell
+var OpenBCIBoard = require('openbci').OpenBCIBoard;
+var portPub = 'tcp://127.0.0.1:3004';
+var zmq = require('zmq-prebuilt');
+var socket = zmq.socket('pair');
+var ourBoard = new OpenBCIBoard();
+
+socket.bind(portPub);
+
+ourBoard.autoFindOpenBCIBoard().then(portName => {
+  if (portName) {
+    ourBoard.connect(portName) // Port name is a serial port name, see `.listPorts()`
+      .then(() => {
+        ourBoard.on('ready',() => {
+          ourBoard.streamStart();
+          ourBoard.on('sample',(sample) => {
+              if (socket) {
+                socket.send(JSON.stringify({message: sample}));
+              }
+            }
+          });
+        });
+      });
+  } else {
+    console.log('Unable to auto find OpenBCI board');
+  }
+});
+
+/* Insert additional exit handlers and cleanup below*/
+```
+
+`handoff.py`
+```python
+import json
+import zmq
+from pylsl import StreamInfo, StreamOutlet
+
+# Create ZMQ socket
+context = zmq.Context()
+_socket = context.socket(zmq.PAIR)
+_socket.connect("tcp://localhost:3004")
+
+# Create a new labstreaminglayer outlet
+numChans = 8;
+sampleRate = 250;
+info = StreamInfo('OpenBCI_EEG', 'EEG', numChans, sampleRate, 'float32', 'openbci_12345')
+outlet = StreamOutlet(info)
+# Stream incoming data to LSL
+while True:
+    msg = _socket.recv()
+    try:
+        dicty = json.loads(msg)
+        message = dicty.get('message')
+        data=message.get('channelData')
+        timeStamp = message.get('timeStamp')
+        outlet.push_sample(data,timeStamp)
+    except BaseException as e:
+        print(e)
+```
+
 ## Contributing
 Please PR if you have code to contribute!
