@@ -1,4 +1,4 @@
-# OpenBCI Node SDK to Python
+# OpenBCI Node SDK to Lab Streaming Layer
 
 ## About
 
