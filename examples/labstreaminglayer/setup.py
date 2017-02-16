@@ -1,8 +1,8 @@
 from setuptools import setup, find_packages
 
-setup(name='openbci-node-python',
+setup(name='openbci-node-labstreaminglayer',
       version='0.0.1',
-      description='Node to Python the right way',
+      description='Labstreaminglayer with NodeJS',
       url='',
       author='AJ Keller',
       author_email='pushtheworldllc@gmail.com',
