@@ -4,7 +4,7 @@
 
 This code provides an example of how to stream OpenBCI data through the [lab streaming layer](https://github.com/sccn/labstreaminglayer) using the NodeJS SDK.
 
-Follow the steps in this README to start streaming. The code is ready to run as-is, but can be modified and extended to customize how you are sending your data. This is designed to be used with the ***OpenBCI Cyton*** (for Ganglion support, see the [Ganglion Node SDK](https://github.com/OpenBCI/OpenBCI_NodeJS_Ganglion/tree/master/examples/labstreaminglayer)).
+Follow the steps in this README to start streaming. The code is ready to run as-is, but can be modified and extended to customize how you are sending your data. This is designed to be used with the **OpenBCI Cyton** (for **Ganglion support**, see the [Ganglion Node SDK](https://github.com/OpenBCI/OpenBCI_NodeJS_Ganglion/tree/master/examples/labstreaminglayer)).
 
 ## Prerequisites
 
@@ -23,11 +23,11 @@ Follow the steps in this README to start streaming. The code is ready to run as-
 
 
 ## Installation
-For Python do:
+First, install Python dependencies:
 ```bash
 python setup.py install
 ```
-For Node:
+Next, install NodeJS dependencies:
 ```bash
 npm install
 ```
