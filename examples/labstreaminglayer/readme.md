@@ -31,6 +31,7 @@ Next, install NodeJS dependencies:
 ```bash
 npm install
 ```
+Note: depending on your computer settings, you may need to run as administrator or with `sudo`.
 
 ## Running
 ```
@@ -40,6 +41,7 @@ For running just the node, for example if you were running the python in a separ
 ```python
 npm run start-node
 ```
+Note: depending on your computer settings, you may need to run as administrator or with `sudo`.
 
 ## Writing Lab Streaming Layer Code
 If you would like to use lab streaming layer in a custom OpenBCI NodeJS application, you must include an instance of the OpenBCI NodeJS library and an instance of a Python interface. A basic example is shown below:
