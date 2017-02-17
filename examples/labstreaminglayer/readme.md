@@ -44,9 +44,8 @@ npm run start-node
 ## Writing Lab Streaming Layer Code
 If you would like to use lab streaming layer in a custom OpenBCI NodeJS application, you must include an instance of the OpenBCI NodeJS library and an instance of a Python interface. A basic example is shown below:
 
-`index.js`
+index.js
 ```js
-// Construct LSL Handoff Python Shell
 var OpenBCIBoard = require('openbci').OpenBCIBoard;
 var portPub = 'tcp://127.0.0.1:3004';
 var zmq = require('zmq-prebuilt');
@@ -77,7 +76,7 @@ ourBoard.autoFindOpenBCIBoard().then(portName => {
 /* Insert additional exit handlers and cleanup below*/
 ```
 
-`handoff.py`
+handoff.py
 ```python
 import json
 import zmq
