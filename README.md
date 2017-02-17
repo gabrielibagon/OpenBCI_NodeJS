@@ -1156,24 +1156,11 @@ The name of the simulator port.
 
 ### <a name="interfacing-with-other-tools-labstreaminglayer"></a> LabStreamingLayer
 
-[LabStreamingLayer](https://github.com/sccn/labstreaminglayer) by SCCN is a stream management tool designed to time-synchronize multiple data streams, potentially from different sources, over a LAN network with millisecond accuracy (given configuration).
+[LabStreamingLayer](https://github.com/sccn/labstreaminglayer) is a tool for streaming or recording time-series data. It can be used to interface with [Matlab](https://github.com/sccn/labstreaminglayer/tree/master/LSL/liblsl-Matlab), [Python](https://github.com/sccn/labstreaminglayer/tree/master/LSL/liblsl-Python), [Unity](https://github.com/xfleckx/LSL4Unity), and many other programs. 
 
-For a demonstration of how to use LSL with the OpenBCI NodeJS SDK, go to our [labstreaminglayer example](https://github.com/OpenBCI/OpenBCI_NodeJS/tree/master/examples/labstreaminglayer), which contains code that is ready to start an LSL stream of OpenBCI data.
+To use LSL with the NodeJS SDK, go to our [labstreaminglayer example](https://github.com/OpenBCI/OpenBCI_NodeJS/tree/master/examples/labstreaminglayer), which contains code that is ready to start an LSL stream of OpenBCI data.
 
-To use this code, go to the directory and run:
-
-```
-npm install
-```
-
-To start streaming, run:
-```
-npm start
-```
-
-Depending on your computer settings, you may need to run this code with `sudo` or root privileges.
-
-For further information on customizing and incorporating LSL in your own OpenBCI NodeJS program, see the [readme](https://github.com/OpenBCI/OpenBCI_NodeJS/tree/master/examples/python).
+Follow the directions in the [readme](https://github.com/OpenBCI/OpenBCI_NodeJS/blob/master/examples/labstreaminglayer/readme.md) to get started.
 
 
 ## <a name="developing"></a> Developing:
