@@ -23,7 +23,7 @@ Follow the steps in this README to start streaming. The code is ready to run as-
 
 
 ## Installation
-First, install Python dependencies:
+First, install Python dependencies by navigating to this directory and running:
 ```bash
 python setup.py install
 ```
@@ -34,10 +34,11 @@ npm install
 Note: depending on your computer settings, you may need to run as administrator or with `sudo`.
 
 ## Running
+To start streaming right away, run:
 ```
 npm start
 ```
-For running just the node, for example if you were running the python in a separate ide and debugging, it's useful.
+To run only the node portion without LSL functionality (for example, to debug streaming issues), run:
 ```python
 npm run start-node
 ```
